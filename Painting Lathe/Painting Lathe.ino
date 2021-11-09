@@ -66,16 +66,11 @@ void loop()
 {
   int state = 99;
   int pot_value = 0;
-  int last_update = millis();
+  unsigned long last_update = millis();
   
-
-  //lcd.print("hello");
 
   while(true)
   {
-    //delay(250);
-    
-
     if(!digitalRead(left) && digitalRead(right)) state = 1;
     else if(!digitalRead(right) && digitalRead(left)) state = 0;
     else if(!digitalRead(right) && !digitalRead(left)) state = 2;
